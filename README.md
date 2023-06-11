@@ -2,7 +2,7 @@
 
 ## Student Records Web Application Hosting Documentation
 This documentation provides an overview and instructions for setting up the hosting infrastructure for the student records web application in the AWS Cloud.
-
+To access the web application, click [HERE](http://hamzabakarandevopsprojectlb-827799244.us-east-1.elb.amazonaws.com/)
 Team members:
 * Mirza Novalic
 * Hamza Bakaran
@@ -19,7 +19,7 @@ Architecture Overview
 * License
 
 ## Architecture Overview
-* Architecture Diagram (slika ide ovdje)
+* The arcghitecture diagrams for each project phase can be found in the [Docs](https://github.com/HamzaBakaran/ibu-devops-engineering-onaws-cloud-group-1/tree/main/docs) folder.
 
 The student records web application is hosted in the AWS Cloud using a scalable and highly available architecture. The architecture consists of the following components:
 
