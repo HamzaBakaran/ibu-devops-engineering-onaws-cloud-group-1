@@ -3,6 +3,11 @@
 ## Student Records Web Application Hosting Documentation
 This documentation provides an overview and instructions for setting up the hosting infrastructure for the student records web application in the AWS Cloud.
 
+Team members:
+* Mirza Novalic
+* Hamza Bakaran
+* Basil Bosnjak
+
 ## Table of Contents
 Architecture Overview
 * Infrastructure Components
