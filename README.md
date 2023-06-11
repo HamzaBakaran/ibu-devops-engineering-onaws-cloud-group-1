@@ -5,28 +5,28 @@ This documentation provides an overview and instructions for setting up the host
 
 ## Table of Contents
 Architecture Overview
-*Infrastructure Components
-*Setup Instructions
-*Testing and Monitoring
-*Security Considerations
-*Cost Optimization
-*Contributing
-*License
+* Infrastructure Components
+* Setup Instructions
+* Testing and Monitoring
+* Security Considerations
+* Cost Optimization
+* Contributing
+* License
 
 ## Architecture Overview
-*Architecture Diagram 
+* Architecture Diagram (slika ide ovdje)
 
 The student records web application is hosted in the AWS Cloud using a scalable and highly available architecture. The architecture consists of the following components:
 
-*Amazon Virtual Private Cloud (VPC): Provides isolated networking environment for the resources.
-*Subnets: Includes public and private subnets across multiple Availability Zones.
-*Route Tables: Control traffic routing between subnets and to the internet.
-*Internet Gateway: Enables communication between the VPC and the internet.
-*Security Groups: Manage inbound and outbound traffic rules for EC2 instances and RDS database.
-*EC2 Instance: Hosts the web application using a launch template and auto scaling group.
-*Load Balancer: Distributes incoming traffic across EC2 instances in the auto scaling group.
-*Amazon RDS: Provides a managed MySQL database for storing student records.
-*Subnet Group: Specifies the subnets where the RDS database is deployed.
+* Amazon Virtual Private Cloud (VPC): Provides isolated networking environment for the resources.
+* Subnets: Includes public and private subnets across multiple Availability Zones.
+* Route Tables: Control traffic routing between subnets and to the internet.
+* Internet Gateway: Enables communication between the VPC and the internet.
+* Security Groups: Manage inbound and outbound traffic rules for EC2 instances and RDS database.
+* EC2 Instance: Hosts the web application using a launch template and auto scaling group.
+* Load Balancer: Distributes incoming traffic across EC2 instances in the auto scaling group.
+* Amazon RDS: Provides a managed MySQL database for storing student records.
+* Subnet Group: Specifies the subnets where the RDS database is deployed.
 
 ## Infrastructure Components
 ### VPC and Subnets
@@ -41,8 +41,8 @@ The route tables define the routing rules for the VPC's subnets. The public subn
 ### Security Groups
 Security groups are used to control inbound and outbound traffic to the EC2 instances and RDS database. The following security groups are configured:
 
-*Web Server Security Group: Allows inbound traffic on port 80 (HTTP) and 443 (HTTPS) from the load balancer and restricts outbound traffic to necessary services.
-*Database Security Group: Permits inbound traffic only from the web server security group on the database port (e.g., 3306 for MySQL) and restricts outbound traffic to the necessary database services.
+* Web Server Security Group: Allows inbound traffic on port 80 (HTTP) and 443 (HTTPS) from the load balancer and restricts outbound traffic to necessary services.
+* Database Security Group: Permits inbound traffic only from the web server security group on the database port (e.g., 3306 for MySQL) and restricts outbound traffic to the necessary database services.
 
 ### EC2 Instance and Auto Scaling
 The web application is hosted on an EC2 instance. A launch template is used to define the instance specifications, such as the Amazon Machine Image (AMI), instance type, and user data script for configuring the instance on launch.
@@ -81,18 +81,18 @@ For more information on testing and monitoring, refer to the Testing and Monitor
 ## Security Considerations
 The hosting infrastructure is designed with security in mind. Consider the following security best practices:
 
-*Ensure that database credentials are not hardcoded in the web application code.
-*Regularly patch and update the operating system, web server, and database software.
-*Monitor and analyze logs to detect any security incidents or suspicious activity.
-*Enable encryption at rest for the RDS database using AWS Key Management Service (KMS) managed keys.
-*Follow AWS security best practices and implement appropriate IAM roles and policies.
-*For detailed security considerations, refer to the Security Guide.
+* Ensure that database credentials are not hardcoded in the web application code.
+* Regularly patch and update the operating system, web server, and database software.
+* Monitor and analyze logs to detect any security incidents or suspicious activity.
+* Enable encryption at rest for the RDS database using AWS Key Management Service (KMS) managed keys.
+* Follow AWS security best practices and implement appropriate IAM roles and policies.
+* For detailed security considerations, refer to the Security Guide.
 
 ## Cost Optimization
 To optimize costs, consider the following practices:
 
-*Use Auto Scaling to adjust the number of EC2 instances based on demand, ensuring optimal capacity while minimizing costs during periods of low traffic.
-*Leverage AWS cost optimization tools, such as AWS Cost Explorer and AWS Trusted Advisor, to monitor and optimize costs.
-*Periodically review resource utilization and right-size instances based on actual workload requirements.
+* Use Auto Scaling to adjust the number of EC2 instances based on demand, ensuring optimal capacity while minimizing costs during periods of low traffic.
+* Leverage AWS cost optimization tools, such as AWS Cost Explorer and AWS Trusted Advisor, to monitor and optimize costs.
+* Periodically review resource utilization and right-size instances based on actual workload requirements.
 
 For more cost optimization tips, refer to the Cost Optimization Guide.
