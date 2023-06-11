@@ -19,7 +19,7 @@ Architecture Overview
 * Cost Optimization
 
 ## Architecture Overview
-* The arcghitecture diagrams for each project phase can be found in the [Docs](https://github.com/HamzaBakaran/ibu-devops-engineering-onaws-cloud-group-1/tree/main/docs) folder.
+* The architecture diagrams for each project phase can be found in the [Docs](https://github.com/HamzaBakaran/ibu-devops-engineering-onaws-cloud-group-1/tree/main/docs) folder.
 
 The student records web application is hosted in the AWS Cloud using a scalable and highly available architecture. The architecture consists of the following components:
 
