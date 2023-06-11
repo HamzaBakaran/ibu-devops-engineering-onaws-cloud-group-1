@@ -2,7 +2,9 @@
 
 ## Student Records Web Application Hosting Documentation
 This documentation provides an overview and instructions for setting up the hosting infrastructure for the student records web application in the AWS Cloud.
+
 To access the web application, click [HERE](http://hamzabakarandevopsprojectlb-827799244.us-east-1.elb.amazonaws.com/)
+
 Team members:
 * Mirza Novalic
 * Hamza Bakaran
@@ -15,8 +17,6 @@ Architecture Overview
 * Testing and Monitoring
 * Security Considerations
 * Cost Optimization
-* Contributing
-* License
 
 ## Architecture Overview
 * The arcghitecture diagrams for each project phase can be found in the [Docs](https://github.com/HamzaBakaran/ibu-devops-engineering-onaws-cloud-group-1/tree/main/docs) folder.
@@ -73,23 +73,18 @@ Follow the steps below to set up the student records web application hosting inf
 8. Set up an Application Load Balancer (ALB) and create a target group for the EC2 instances.
 9. Deploy the Amazon RDS MySQL database in the private subnet using the specified subnet group.
 
-For detailed instructions, refer to the Setup Guide.
+The scripts used for EC2, Database and Cloud 9 can be found [HERE](https://github.com/HamzaBakaran/ibu-devops-engineering-onaws-cloud-group-1/tree/main/helper-scripts)
 
 ## Testing and Monitoring
-After the infrastructure is set up, perform the following tests and monitoring tasks:
 
-1. Test the web application by accessing the ALB's DNS name or the public IP address of the EC2 instance.
-2. Monitor the application's performance, EC2 instances, and ALB using Amazon CloudWatch.
-3. Set up alarms and notifications to detect and respond to any performance or availability issues.
-For more information on testing and monitoring, refer to the Testing and Monitoring Guide.
+Test the web application by accessing the ALB's DNS name or the public IP address of the EC2 instance.
+IPv4 Address is used and allocated automatically upon the EC2 instance creation.
 
 ## Security Considerations
 The hosting infrastructure is designed with security in mind. Consider the following security best practices:
 
 * Ensure that database credentials are not hardcoded in the web application code.
 * Regularly patch and update the operating system, web server, and database software.
-* Monitor and analyze logs to detect any security incidents or suspicious activity.
-* Enable encryption at rest for the RDS database using AWS Key Management Service (KMS) managed keys.
 * Follow AWS security best practices and implement appropriate IAM roles and policies.
 * For detailed security considerations, refer to the Security Guide.
 
@@ -99,5 +94,3 @@ To optimize costs, consider the following practices:
 * Use Auto Scaling to adjust the number of EC2 instances based on demand, ensuring optimal capacity while minimizing costs during periods of low traffic.
 * Leverage AWS cost optimization tools, such as AWS Cost Explorer and AWS Trusted Advisor, to monitor and optimize costs.
 * Periodically review resource utilization and right-size instances based on actual workload requirements.
-
-For more cost optimization tips, refer to the Cost Optimization Guide.
