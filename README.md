@@ -24,7 +24,7 @@ Architecture Overview
 The student records web application is hosted in the AWS Cloud using a scalable and highly available architecture. The architecture consists of the following components:
 
 * Amazon Virtual Private Cloud (VPC): Provides isolated networking environment for the resources.
-* Subnets: Includes public and private subnets across multiple Availability Zones.
+* Subnets: Includes two public and two private subnets across two Availability Zones (us-east-1a and us-east-1b).
 * Route Tables: Control traffic routing between subnets and to the internet.
 * Internet Gateway: Enables communication between the VPC and the internet.
 * Security Groups: Manage inbound and outbound traffic rules for EC2 instances and RDS database.
@@ -35,18 +35,18 @@ The student records web application is hosted in the AWS Cloud using a scalable 
 
 ## Infrastructure Components
 ### VPC and Subnets
-The Virtual Private Cloud (VPC) is configured with a CIDR block of 10.0.0.0/16. It includes public and private subnets spread across multiple Availability Zones. The subnets are designed as follows:
+The Virtual Private Cloud (VPC) is configured with a CIDR block of 10.0.0.0/16. It includes two public and two private subnets spread across two Availability Zones(us-east-1a and us-east-1b). The subnets are designed as follows:
 
-Public Subnets: Located in the public network and associated with the internet gateway. These subnets host the EC2 instances and load balancer.
-Private Subnets: Isolated from the internet and used for the RDS database. These subnets provide an extra layer of security.
+Public Subnets: (Public subnet 1 10.0.0.0/24 us-east-1a) and (Public subnet 2 10.0.1.0/24 us-east-1b)  Located in the public network and associated with the internet gateway. These subnets host the EC2 instances and load balancer.  
+Private Subnets: (Private subnet 1 10.0.2.0/23 us-east-1a) and (Private subnet 2 10.0.4.0/23 us-east-1b) Isolated from the internet and used for the RDS database. These subnets provide an extra layer of security.
 
 ### Route Tables
-The route tables define the routing rules for the VPC's subnets. The public subnets have a route to the internet gateway (0.0.0.0/0), allowing outgoing traffic to the internet. The private subnets have routes to the RDS database subnet and local routes for internal communication.
+The route tables define the routing rules for the VPC's subnets. The public subnets have a route to the internet gateway (0.0.0.0/0), allowing outgoing traffic to the internet. The private subnets have routes to the NAT Gateway and local routes for internal communication.
 
 ### Security Groups
 Security groups are used to control inbound and outbound traffic to the EC2 instances and RDS database. The following security groups are configured:
 
-* Web Server Security Group: Allows inbound traffic on port 80 (HTTP) and 443 (HTTPS) from the load balancer and restricts outbound traffic to necessary services.
+* Web Server Security Group: Allows inbound traffic on port 80 (HTTP)  from the load balancer and restricts outbound traffic to necessary services.
 * Database Security Group: Permits inbound traffic only from the web server security group on the database port (e.g., 3306 for MySQL) and restricts outbound traffic to the necessary database services.
 
 ### EC2 Instance and Auto Scaling
